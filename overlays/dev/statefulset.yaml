@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: 7dtd-server
+spec:
+  template:
+    spec:
+      containers:
+        - name: 7dtd-server
+          envFrom:
+          - configMapRef:
+            name: env-configmap
