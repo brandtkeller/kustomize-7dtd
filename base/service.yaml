@@ -20,10 +20,10 @@ spec:
     port: 8080
     protocol: TCP
   - name: telnet
-    port: 8080
+    port: 8081
     protocol: TCP
   - name: alloc-fixes
     port: 8082
     protocol: TCP
   selector:
-  app: 7dtd-server
+    app: 7dtd-server

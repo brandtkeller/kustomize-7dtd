@@ -4,3 +4,32 @@ metadata:
   name: 7dtd-service
 spec:
   type: NodePort
+  ports:
+  - name: server-tcp
+    port: 26900
+    protocol: TCP
+    nodePort: 31100
+  - name: server-udp1
+    port: 26900
+    protocol: UDP
+    nodePort: 31100
+  - name: server-udp2
+    port: 26901
+    protocol: UDP
+    nodePort: 31101
+  - name: server-udp3
+    port: 26902
+    protocol: UDP
+    nodePort: 31102
+  - name: webadmin
+    port: 8080
+    protocol: TCP
+    nodePort: 31103
+  - name: telnet
+    port: 8081
+    protocol: TCP
+    nodePort: 31104
+  - name: alloc-fixes
+    port: 8082
+    protocol: TCP
+    nodePort: 31105

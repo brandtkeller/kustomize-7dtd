@@ -6,8 +6,8 @@ spec:
   selector:
     matchLabels:
       app: 7dtd-server
+  serviceName: 7dtd-service
   replicas: 1
-  minReadySeconds: 10 # by default is 0
   template:
     metadata:
       labels:
@@ -41,13 +41,23 @@ spec:
           protocol: TCP
         volumeMounts:
         - name: data
-          mountPath: /home/sdtdserver
+          mountPath: /home/sdtdserver/serverfiles/
+          subPath: serverfiles
+        - name: data
+          mountPath: /home/sdtdserver/.local/share/7DaysToDie/
+          subPath: local
+        - name: data
+          mountPath: /home/sdtdserver/log/
+          subPath: log
+        - name: data
+          mountPath: /home/sdtdserver/lgsm/
+          subPath: lgsm
+        
   volumeClaimTemplates:
   - metadata:
       name: data
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: ""
       resources:
         requests:
           storage: 10Gi
