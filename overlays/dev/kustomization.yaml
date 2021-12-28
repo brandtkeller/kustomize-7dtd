@@ -3,9 +3,11 @@ kind: Kustomization
 bases:
 - ../../base
 namePrefix: dev-
+namespace: dev-7dtd
 configMapGenerator:
 - name: env-configmap
-  files:
+  envs:
   - application.properties
 patchesStrategicMerge:
 - statefulset.yaml
+- service.yaml
