@@ -8,31 +8,31 @@ spec:
   - name: server-tcp
     port: 26900
     protocol: TCP
-    nodePort: 31100
+    nodePort: 32100
   - name: server-udp1
     port: 26900
     protocol: UDP
-    nodePort: 31100
+    nodePort: 32100
   - name: server-udp2
     port: 26901
     protocol: UDP
-    nodePort: 31101
+    nodePort: 32101
   - name: server-udp3
     port: 26902
     protocol: UDP
-    nodePort: 31102
+    nodePort: 32102
   - name: webadmin
     port: 8080
     protocol: TCP
-    nodePort: 31103
+    nodePort: 32103
   - name: telnet
     port: 8081
     protocol: TCP
-    nodePort: 31104
+    nodePort: 32104
   - name: alloc-fixes
     port: 8082
     protocol: TCP
-    nodePort: 31105
+    nodePort: 32105
 
 ## Uncomment the below section to use a cloud loadbalancer instead of nodeport
 
