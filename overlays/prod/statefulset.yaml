@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: 7dtd-server
+spec:
+  template:
+    spec:
+      containers:
+        - name: 7dtd-server
+          env:
+          - name: START_MODE
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: START_MODE
+          - name: VERSION
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: VERSION
+          - name: TEST_ALERT
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: TEST_ALERT
+          - name: ALLOC_FIXES
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: ALLOC_FIXES
+          - name: BACKUP
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: BACKUP
+          - name: MONITOR
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: MONITOR
+          - name: PUID
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: PUID
+          - name: PGID
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: PGID
+          - name: TimeZone
+            valueFrom:
+              configMapKeyRef:
+                name: env-configmap
+                key: TimeZone
